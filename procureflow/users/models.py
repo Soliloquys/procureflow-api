@@ -9,16 +9,16 @@ class User(AbstractUser):
         ACCOUNTANT = 'ACCOUNTANT', 'Accountant'
         PROJECT_MANAGER = 'PROJECT_MANAGER', 'Project Manager'
 
-        role = models.CharField(
+    role = models.CharField(
             max_length=30,
             choices=Role.choices,
             default=Role.ENGINEER, 
         )
 
-        phone = models.CharField(
+    phone = models.CharField(
             max_length=15, 
             blank=True, 
             null=True
         )
-        def __str__(self):
+    def __str__(self):
             return f"{self.username} ({self.role})"
